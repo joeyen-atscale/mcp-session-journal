@@ -1,0 +1,42 @@
+[package]
+name = "mcp-session-journal"
+version = "0.1.0"
+edition = "2021"
+description = "Durable, append-only episodic log of MCP investigation sessions"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/joeyen-atscale/mcp-session-journal"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[[test]]
+name = "ac1_create"
+path = "tests/ac1_create.rs"
+
+[[test]]
+name = "ac2_load"
+path = "tests/ac2_load.rs"
+
+[[test]]
+name = "ac3_list"
+path = "tests/ac3_list.rs"
+
+[[test]]
+name = "ac4_rotation"
+path = "tests/ac4_rotation.rs"
+
+[[test]]
+name = "ac5_replay"
+path = "tests/ac5_replay.rs"
+
+[[test]]
+name = "ac6_corrupt"
+path = "tests/ac6_corrupt.rs"
+
+[[test]]
+name = "bench_append"
+path = "tests/bench_append.rs"
